@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>База данных</title>
+
+     <!-- CSS -->
+     <link rel="stylesheet" href="SecondBlock.css">
+    
+     <!-- Icon Font -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    
+</head>
+<body>
+  
+<header>
+
+<!-- NavBar -->
+<nav>
+    <ul class="mainList">
+        <li><a  href="#"> Загрузка отчёта <i class="fas fa-caret-down"></i></a></li>
+        <li><a  href="#"> Сервис <i class="fas fa-caret-down"></i> </a></li>
+        <li><a  href="#"> Просмотр <i class="fas fa-caret-down"></i> </a></li>
+        <li><a  href="#"> <i class="fas fa-cog"> </i> <i class="fas fa-caret-down"></i></a></li>
+        <li><a  href="#"> Выход из системы <i class="fas fa-power-off"></i> </a></li>
+    </ul>
+</nav>   
+
+</header>
+
+
+
+<div class="panel">БД Единая таблица регистрации счетов</div>
+
+
+
+<div class="regData">
+
+        <div class="input-header">
+            <label>Начальная дата</label>
+            <input class="input-value" type="date" placeholder="" name="">
+        </div>
+    
+        <div class="input-header">
+            <label>Конечная дата</label>
+            <input class="input-value" type="date" placeholder="" name="">
+        </div>
+    
+        <div class="input-header">
+            <label>Номер</label>
+            <input class="input-value" type="text" placeholder="" name="">
+        </div>
+
+        <div class="input-header">
+            <label>E-Mail</label>
+            <input class="input-value" type="email" placeholder="" name="">
+        </div>
+        
+        <button type="" class="actBtn">Send E-Mail <i class="fas fa-share-square"></i></button>
+            
+        <button type="" class="filter"><i class="fas fa-filter"></i></button>
+        
+
+    </div>
+
+
+
+
+<!-- Table -->
+<table id="baze">
+    <tr>
+        <th>Номер клиента</th>
+        <th>Имя клиента</th>
+        <th>№ транзакции</th>
+        <th>Сумма транзакции без НДС</th>
+        <th>НДС</th>
+        <th>Сумма транзакции с НДС</th>
+        <th>Дата транзакции</th>
+        <th>Номер карты</th>
+        <th>Действие карты</th>
+        <th>Вид карты</th>
+        <th>E-mail</th>
+        <th>Номер телефона</th>
+        <th>Город</th>
+        <th>Улица</th>
+        
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3"><b>Итого сумма:</b></td>
+        <td>0.00</td>
+        <td>0.00</td>
+        <td colspan="9"></td>
+    </tr>
+</table>
+
+<!-- Total Inputs -->
+
+<div class="input-act">
+        <label class="label-field"> Действие: </label>
+        <select class="act" name="currency">
+                <option value="">Получить транзакции в одном PDF</option>
+                <option value="">Получить транзакции в одном Excel</option>
+                <option value="">Получить транзакции в одном Word</option>
+        </select>
+
+        <button type="" class="actBtn">Выполнить</button>
+    </div>
+
+
+<div class="total">
+
+    <div class="input-container">
+        <label class="label-field">Сумма транзакции без НДС:</label>
+        <input class="input-field" type="text" placeholder="0.00" name="">
+    </div>
+
+    <div class="input-container">
+        <label class="label-field">Всего записей</label>
+        <input class="input-field" type="text" placeholder="0" name="">
+    </div>
+
+    <div class="input-container">
+        <label class="label-field">НДС:</label>
+        <input class="input-field" type="text" placeholder="0.00" name="">
+    </div>
+
+    <div class="input-container">
+        <label class="label-field">Выделенно записей</label>
+        <input class="input-field" type="text" placeholder="0" name="">
+    </div>
+    
+    <div class="input-container">
+        <label class="label-field">Сумма транзакции:</label>
+        <input class="input-field" type="text" placeholder="0.00" name="">
+    </div>
+       
+    <div class="input-container">
+        <label class="label-field">Найдено E-Mail адресов</label>
+        <input class="input-field" type="text" placeholder="0" name="">
+    </div>
+
+</div>
+
+
+
+
+</body>
+</html>

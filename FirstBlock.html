@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Панель управления</title>
+
+     <!-- CSS -->
+     <link rel="stylesheet" href="FirstBlock.css">
+    
+     <!-- Icon Font -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+      
+</head>
+<body>
+  
+<header>
+
+<div id="panel">Панель Управления <i class="fas fa-cogs"></i> </div>    
+
+<!-- NavBar -->
+<nav>
+    <ul class="mainList">
+        <li class="drop drop1"> <a href="#"> Буфер сервера </a> 
+            <ul>  
+                <li><a href="#"> Загрузить Excel в буфер сервера </a></li>
+                <li><a href="#"> Просмотр буфера сервера </a></li>
+             </ul>
+        </li>
+        <li class="drop"> <a href="#"> Работа с таблицами </a> 
+            <ul>  
+                <li><a href="#"> Создать таблицу cards </a></li>
+                <li><a href="#"> Создать таблицу Easy card </a></li>
+                <li><a href="#"> Создать таблицу  Кредитная компания </a></li>
+                <li><a href="#"> Просморт и Экспорт таблиц  </a></li>
+                <li><a href="#"> Сгруппировать таблицы в отчёт </a></li>
+            </ul>
+        </li>
+        <li><a href="#"> Параметры входа в систему </a></li>
+        <li><a href="#"> Выход из системы </a></li>
+    </ul>
+</nav>   
+
+</header>
+
+<!-- The Inquiry -->
+<button id="inquiryBtn"><i class="fas fa-question-circle"></i></button>
+
+<div id="myInquiry" class="inquiry">
+
+   <div class="inquiryContent">
+    <div class="inquiryHeader">
+        <span class="close">&times;</span>
+        <h3>Справочная информация по работе с модулем</h3>
+    </div>
+    
+       <p><b>Алгоритм действий получения отчета:</b></p>
+              
+       <ol>
+           <li>Если ранее не загружали, то загружаем файл Excel c информацией по всем картам в буфер</li>
+           <li>Создаем из буфера таблицу Cards</li>
+           <li>Загружаем файл Excel полученный с информацией Ease карте в буфер</li>
+           <li>Создаем из буфера таблицу EaseCards</li>
+           <li>Загружаем файл Excel полученный с информацией от кредитной компании в буфер</li>
+           <li>Создаем из буфера таблицу CreditCompany</li>
+           <li>При условии, что все три выше указанные таблицы загружены и сформированы приступаем к форматированию отчета</li>
+           <li>Группируем таблицы в отчет</li>
+           <li>Полученную таблицу можем сохранить на Вашем компьютери в Excel формате</li>
+       </ol>
+
+       <p><i><b>Примичание.</b> Загрузка Excel файлов возможно только в формате Excel 97-2003</i></p>
+    
+       <button class="flagBtn">Описание значения параметров <b>flag</b> в таблице отчета:</button>
+        <div class="flagBox">
+            <ul>
+                <li>flag=0 - Данные не определены, либо присутствует не соответствие данных, либо задвоенность данных</li>
+                <li>flag=1 - Проплачено, все ОК!</li>
+                <li>flag=2 - К карте привязано несколько клиентов</li>
+                <li>flag=3 - Клиент отсутствует в БД Crads и определен по БД Easy Cards</li>
+                <li>flag=4 - Клиенты в БД Easy Cards не выполнившие проплату (в excel отчёте 2-й лист)</li>
+                <li>flag=5 - Имеется несколько одинаковых сделок в БД CreditCards, к которым привязана 1 сделка в БД Easy Cards (в excel отчёт 3-й лист)</li>
+                <li>flag=6 - Имеется несколько одинаковых сделок в БД CreditCards, к которым привязана более 1 сделки в БД Easy Cards (в excel отчёте 4-й лист)</li>
+                <li>flag=7 - Клиенты в БД Easy Cards, которых нет в CRM (в excel отчёте 5-й лист)</li>
+            </ul>
+        </div>
+     </div>
+   
+</div>
+
+
+<div class="main-text">
+    <h1>WOW</h1>
+    <p>Corporation</p>
+</div>
+
+
+<script>
+
+
+let modal = document.getElementById('myInquiry');
+let inquiryBtn = document.getElementById("inquiryBtn");
+let span = document.getElementsByClassName("close")[0];
+
+inquiryBtn.onclick = function() {
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+
+
+let flagBtn = document.getElementsByClassName("flagBtn")[0];
+let flagBox = document.getElementsByClassName("flagBox")[0];
+
+flagBox.style.display = "none";
+flagBtn.addEventListener("click", showHide);
+
+function showHide() {
+
+    if (flagBox.style.display === "none") {
+        flagBox.style.display = "block";
+    }
+    else {
+        flagBox.style.display = "none";
+    }
+    
+}
+
+
+
+
+</script>
+
+</body>
+</html>
